@@ -1,0 +1,83 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>person details</title>
+</head>
+<body>
+    
+<h3>Person Detais</h3>
+<div ><br>
+First name:
+<input type="text"  id="mytext" value=" " ><br>
+<br>
+Last name:
+<input type="text"  id="Ltext" value=" " ><br>
+<br>
+Contact number:
+<input type="number"  id="number" value=" ">
+
+<button id="show-value" onclick="showvalues()" >show results</button>
+
+<p Id="demo"></p>
+<ul id="mytext"></ul>
+<ul id="Ltext"></ul>
+<ul  id="number"></ul>
+</div>
+
+<script> 
+function checkforblank() {
+    var errormessage= " ";
+
+if (document.getElementById("mytext").value == " " ) {
+errormessage+= "enter your first name \n";
+}
+
+if (document.getElementById("Ltext").value == " " ) {
+errormessage+= "enter your last name \n";
+}
+if (document.getElementById("number").value == "" ) {
+errormessage+= "enter  your  number\n ";
+}
+if (errormessage != " ") {
+    alert(errormessage);
+    return false;
+}
+}
+
+
+function  myfunction() {
+ 
+
+ var x= document.getElementById("mytext").value
+ var text=document.createTextNode(x)
+ var newItem=document.createElement("li")
+     newItem.appendChild(text)
+  document.getElementById("demo").appendChild(newItem)
+
+
+ var y= document.getElementById("Ltext").value
+ var text1=document.createTextNode(y)
+ var newItem1=document.createElement("li");
+     newItem1.appendChild(text1)
+  document.getElementById("demo").appendChild(newItem1)
+
+
+ var z=document.getElementById("number").value
+ var text2=document.createTextNode(z);
+ var newItem2 =document.createElement("li");
+     newItem2.appendChild(text2)
+  document.getElementById("demo").appendChild(newItem2)
+
+}
+
+function showvalues() {
+    checkforblank();
+    myfunction() ;
+ 
+};
+
+
+</script>
+</body>
+
+</html>
